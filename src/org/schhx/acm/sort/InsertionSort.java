@@ -6,26 +6,30 @@ package org.schhx.acm.sort;
 public class InsertionSort {
 
     public static void main(String[] args) {
-        int[] nums = SortUtils.generateIntArray(10, 100);
+        int[] a = SortUtils.generateIntArray(10, 100);
         System.out.print("原始数组为: ");
-        SortUtils.printArray(nums);
-        nums = insertionSort(nums);
+        SortUtils.printArray(a);
+        insertionSort(a);
         System.out.print("排序后为: ");
-        SortUtils.printArray(nums);
+        SortUtils.printArray(a);
     }
 
-    private static int[] insertionSort(int[] nums){
-        int length = nums.length;
-        for(int i=1; i<length; i++){
-            for(int j=i;j>0;j--){
-                if(nums[j] >= nums[j-1]){
+    private static void insertionSort(int[] a) {
+        if (a == null || a.length <= 0) {
+            throw new RuntimeException("参数不合法");
+        }
+        int length = a.length;
+        for (int i = 1; i < length; i++) {
+            int tmp = a[i];
+            int j = i;
+            for (; j > 0; j--) {
+                if (a[j - 1] > tmp) {
+                    a[j] = a[j - 1];
+                } else {
                     break;
                 }
-                int temp = nums[j];
-                nums[j] = nums[j-1];
-                nums[j-1] = temp;
             }
+            a[j] = tmp;
         }
-        return nums;
     }
 }

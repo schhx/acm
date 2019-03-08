@@ -7,33 +7,32 @@ package org.schhx.acm.sort;
 public class SelectionSort {
 
     public static void main(String[] args) {
-        int[] nums = SortUtils.generateIntArray(10, 100);
+        int[] a = SortUtils.generateIntArray(10, 100);
         System.out.print("原始数组为: ");
-        SortUtils.printArray(nums);
-        nums = selectionSort(nums);
+        SortUtils.printArray(a);
+        selectionSort(a);
         System.out.print("排序后为: ");
-        SortUtils.printArray(nums);
+        SortUtils.printArray(a);
     }
 
 
-    private static int[] selectionSort(int[] nums) {
-        int length = nums.length;
-        if (length == 0) {
-            return nums;
+    private static void selectionSort(int[] a) {
+        if (a == null || a.length <= 0) {
+            throw new RuntimeException("参数不合法");
         }
+        int length = a.length;
         for (int i = 0; i < length - 1; i++) {
             int index = i;
             for (int j = i + 1; j < length; j++) {
-                if (nums[j] < nums[index]) {
+                if (a[j] < a[index]) {
                     index = j;
                 }
             }
             if (i != index) {
-                int temp = nums[i];
-                nums[i] = nums[index];
-                nums[index] = temp;
+                int temp = a[i];
+                a[i] = a[index];
+                a[index] = temp;
             }
         }
-        return nums;
     }
 }
