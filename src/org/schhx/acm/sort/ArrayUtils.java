@@ -2,7 +2,7 @@ package org.schhx.acm.sort;
 
 import java.util.Random;
 
-public class SortUtils {
+public class ArrayUtils {
 
     public static int[] generateIntArray(int length, int max){
         int[] nums = new int[length];

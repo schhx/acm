@@ -9,12 +9,12 @@ package org.schhx.acm.sort;
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] a = SortUtils.generateIntArray(10, 100);
+        int[] a = ArrayUtils.generateIntArray(10, 100);
         System.out.print("原始数组为: ");
-        SortUtils.printArray(a);
+        ArrayUtils.printArray(a);
         quickSort(a);
         System.out.print("排序后为: ");
-        SortUtils.printArray(a);
+        ArrayUtils.printArray(a);
     }
 
 
