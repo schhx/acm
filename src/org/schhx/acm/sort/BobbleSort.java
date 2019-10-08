@@ -1,6 +1,8 @@
 package org.schhx.acm.sort;
 
 
+import org.schhx.acm.ArrayUtils;
+
 /**
  * 冒泡排序
  */
@@ -15,7 +17,7 @@ public class BobbleSort {
         ArrayUtils.printArray(a);
     }
 
-    private static void bubbleSort(int[] a) {
+    public static void bubbleSort(int[] a) {
         if (a == null || a.length <= 0) {
             throw new RuntimeException("参数不合法");
         }

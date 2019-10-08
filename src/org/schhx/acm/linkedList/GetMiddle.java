@@ -1,5 +1,7 @@
 package org.schhx.acm.linkedList;
 
+import org.schhx.acm.Node;
+
 /**
  * @author shanchao
  * @date 2019-03-11

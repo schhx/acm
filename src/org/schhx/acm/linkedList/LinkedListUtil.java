@@ -1,5 +1,7 @@
 package org.schhx.acm.linkedList;
 
+import org.schhx.acm.Node;
+
 import java.util.Random;
 
 /**

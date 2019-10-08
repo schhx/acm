@@ -1,5 +1,7 @@
 package org.schhx.acm.linkedList;
 
+import org.schhx.acm.Node;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -73,7 +75,7 @@ public class CheckCycle {
         while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            if (slow.equals(fast)) {
+            if (slow == fast) {
                 isCycle = true;
                 break;
             }
@@ -81,7 +83,7 @@ public class CheckCycle {
 
         if (isCycle) {
             slow = head;
-            while (!slow.equals(fast)) {
+            while (slow != fast) {
                 slow = slow.next;
                 fast = fast.next;
             }

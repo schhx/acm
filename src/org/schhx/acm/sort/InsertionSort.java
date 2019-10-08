@@ -1,5 +1,7 @@
 package org.schhx.acm.sort;
 
+import org.schhx.acm.ArrayUtils;
+
 /**
  * 插入排序
  */
@@ -14,7 +16,7 @@ public class InsertionSort {
         ArrayUtils.printArray(a);
     }
 
-    private static void insertionSort(int[] a) {
+    public static void insertionSort(int[] a) {
         if (a == null || a.length <= 0) {
             throw new RuntimeException("参数不合法");
         }

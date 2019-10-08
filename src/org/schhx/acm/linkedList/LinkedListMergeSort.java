@@ -1,5 +1,7 @@
 package org.schhx.acm.linkedList;
 
+import org.schhx.acm.Node;
+
 /**
  * 链表归并排序
  *

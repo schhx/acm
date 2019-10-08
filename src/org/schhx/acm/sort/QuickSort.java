@@ -1,5 +1,7 @@
 package org.schhx.acm.sort;
 
+import org.schhx.acm.ArrayUtils;
+
 /**
  * 快速排序
  *
@@ -18,7 +20,7 @@ public class QuickSort {
     }
 
 
-    private static void quickSort(int[] a) {
+    public static void quickSort(int[] a) {
         if (a == null || a.length <= 0) {
             throw new RuntimeException("参数不合法");
         }

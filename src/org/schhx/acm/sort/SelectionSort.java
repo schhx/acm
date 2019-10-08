@@ -1,6 +1,8 @@
 package org.schhx.acm.sort;
 
 
+import org.schhx.acm.ArrayUtils;
+
 /**
  * 选择排序
  */
@@ -16,7 +18,7 @@ public class SelectionSort {
     }
 
 
-    private static void selectionSort(int[] a) {
+    public static void selectionSort(int[] a) {
         if (a == null || a.length <= 0) {
             throw new RuntimeException("参数不合法");
         }

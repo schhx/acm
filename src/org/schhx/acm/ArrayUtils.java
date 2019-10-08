@@ -1,4 +1,4 @@
-package org.schhx.acm.sort;
+package org.schhx.acm;
 
 import java.util.Random;
 
