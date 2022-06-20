@@ -1,5 +1,8 @@
 package org.schhx.acm.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author shanchao
  * @date 2019-05-05
@@ -8,22 +11,16 @@ public class LengthOfLongestSubstring_3 {
 
 
     public int lengthOfLongestSubstring(String s) {
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
-        boolean[] chars = new boolean[256]; // 256 ASCII code
-        int rst = 0;
-        int start = 0;
-        int end = 0;
-        while (start < s.length()) {
-            while (end < s.length() && !chars[s.charAt(end)]) {
-                chars[s.charAt(end)] = true;
-                rst = Math.max(rst, end - start + 1);
-                end++;
+        int n = s.length(), ans = 0;
+        Map<Character, Integer> map = new HashMap<>(); // current index of character
+        // try to extend the range [i, j]
+        for (int j = 0, i = 0; j < n; j++) {
+            if (map.containsKey(s.charAt(j))) {
+                i = Math.max(map.get(s.charAt(j)), i);
             }
-            chars[s.charAt(start)] = false;
-            start++;
+            ans = Math.max(ans, j - i + 1);
+            map.put(s.charAt(j), j + 1);
         }
-        return rst;
+        return ans;
     }
 }

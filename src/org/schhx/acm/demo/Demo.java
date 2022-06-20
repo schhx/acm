@@ -3,6 +3,9 @@ package org.schhx.acm.demo;
 
 import org.schhx.acm.ArrayUtils;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author shanchao
  * @date 2019-03-06
@@ -11,11 +14,12 @@ public class Demo {
 
     public static void main(String[] args) {
 
-        int[] a = ArrayUtils.generateIntArray(10, 100);
-        ArrayUtils.printArray(a);
-        sort(a, 0, a.length - 1);
-        ArrayUtils.printArray(a);
+//        int[] a = ArrayUtils.generateIntArray(10, 100);
+//        ArrayUtils.printArray(a);
+//        sort(a, 0, a.length - 1);
+//        ArrayUtils.printArray(a);
 
+        System.out.println(lengthOfLongestSubstring("abcad"));
     }
 
     private static void sort(int[] a, int begin, int end) {
@@ -48,5 +52,16 @@ public class Demo {
         return i - 1;
     }
 
+    public static int lengthOfLongestSubstring(String s) {
+        int n = s.length(), ans = 0;
+        int[] index = new int[128]; // current index of character
+        // try to extend the range [i, j]
+        for (int j = 0, i = 0; j < n; j++) {
+            i = Math.max(index[s.charAt(j)], i);
+            ans = Math.max(ans, j - i + 1);
+            index[s.charAt(j)] = j + 1;
+        }
+        return ans;
+    }
 
 }
